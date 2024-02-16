@@ -1,0 +1,122 @@
+---
+title: "ggplot extension :: ggcirct"
+author:
+  - name: "**Gabriela Palomo**"
+    orcid: 0000-0002-0661-413X
+    email: gabriella.palomo@gmail.com
+    url: https://gabspalomo.github.io
+format: 
+  revealjs: 
+    # embed-resources: true
+    # chalkboard: true
+    standalone: true
+    incremental: true
+    smaller: true
+    center: false
+    slide-number: false
+    overview: true
+    # width: 1280
+    # height: 720
+    code-copy: true
+    theme: [default, my_custom.scss]
+    footer: "Project Club - February 2024"
+title-slide-attributes: 
+  data-background-image: images/time.png
+  data-background-position: 50% 12%
+  data-background-size: 10%
+  data-background-opacity: "0.5"
+pdf-separate-fragments: false
+---
+
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(ggthemes)
+library(cowplot)
+```
+
+## My background {.center}
+
+:::: {.columns}
+::: {.column width="60%" .incremental}
+
+- Ecology, Biology, and Education
+- Stumbled upon quantitative ecology and data science and never looked back 
+- Data visualization !!!  
+
+:::
+
+::: {.column width="40%"}
+
+![](images/collage.png)
+
+:::
+
+::::
+
+## Activity patterns
+
+:::: {.rows}
+::: {.row height="80%"}
+
+- Activity patterns: frequency of activity during a 24-hr period. 
+- Camera traps, collars, biologgers 
+- When is this species active? 
+
+:::
+
+::: {.row height="20%"}
+
+![](images/mtlion.png) 
+
+:::
+
+::::
+
+## Let's visualize activity patterns 
+
+::: {layout-ncol=2}
+
+![Nakabayashi et al., 2021](images/overlap.png)
+
+![Gracanin and Mikac 2022](images/gliders_actp.png)
+
+:::
+
+
+
+## So what's the problem? 
+
+::: {layout-ncol=2}
+
+- Time is continuous and it makes more sense to visualize it in a circular graph
+- Currently, the two main packages to graph temporal patterns and estimate the overlap coefficient produce horizontal graphs. 
+
+:::
+
+## My proposal is a package that can:
+
+::::{layout-nrow=2}
+
+- Create a circular frequency bar plots for the activity of one or more species based on ggplot2. 
+- Circular kernel density curve for the activity of one or more species based on ggplot2. 
+
+:::{layout-ncol=2}
+
+![Circular overlap](images/my_overlap.png)
+
+:::
+
+::::
+
+##
+
+:::{style="font-size:12px" .nonincremental}
+
+- Tallian, A., Mattisson, J., Samelius, G., Odden, J., Mishra, C., Linnell, J.D., Lkhagvajav, P. and Johansson, O., 2023. Wild versus domestic prey: Variation in the kill-site behavior of two large felids. Global Ecology and Conservation, e02650.
+
+- Semper-Pascual, A., Sheil, D., Beaudrot, L. et al. Occurrence dynamics of mammals in protected tropical forests respond to human presence and activities. Nat Ecol Evol 7, 1092-1103 (2023). https://doi.org/10.1038/s41559-023-02060-6
+
+:::
